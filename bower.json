@@ -1,0 +1,26 @@
+{
+  "name": "lottery-boom",
+  "private": true,
+  "version": "0.0.0",
+  "homepage": "https://github.com/phariel/lottery-boom",
+  "authors": [
+    "Phil Peng <phil.peng@ef.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/asset_files/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1",
+    "less": "~2.5.1",
+    "react": "~0.13.3",
+    "require-less": "~0.1.5",
+    "requirejs-react-jsx": "~0.14.2",
+    "requirejs": "~2.1.18"
+  }
+}
