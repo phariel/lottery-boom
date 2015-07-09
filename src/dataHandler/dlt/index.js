@@ -14,7 +14,7 @@ DLT.parse = function (resolve, num) {
 		console.log('via cache');
 		num > cacheDLT.length && (num = cacheDLT.length);
 
-		resolve(cacheDLT.slice(0, num - 1));
+		resolve(cacheDLT.slice(0, num));
 	} else {
 		dltUpdate.start(function () {
 			dbHelper.retrieve({
@@ -29,7 +29,7 @@ DLT.parse = function (resolve, num) {
 				});
 				cacheHandler.setCache(PROP_CACHE, row, 86400);
 				num > row.length && (num = row.length);
-				resolve(row.slice(0, num - 1));
+				resolve(row.slice(0, num));
 			});
 		});
 	}
