@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
-    "exiler": "^0.5.7",
+    "exiler": "^0.5.8",
     "node-cache": "^3.0.0",
     "sqlite3": "^3.0.8"
   },

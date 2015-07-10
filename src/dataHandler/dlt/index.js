@@ -1,6 +1,7 @@
 var cacheHandler = require('../../cacheHandler');
 var dbHelper = require('../dbHelper');
 var dltUpdate = require('./update');
+var logger = require('../../logger');
 
 var DLT = {};
 
@@ -11,7 +12,7 @@ DLT.parse = function (resolve, num) {
 	!num && (num = 20);
 
 	if (cacheDLT) {
-		console.log('via cache');
+		logger.log('via cache');
 		num > cacheDLT.length && (num = cacheDLT.length);
 
 		resolve(cacheDLT.slice(0, num));

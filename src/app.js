@@ -1,5 +1,14 @@
 var exiler = require('exiler');
 var dataHandler = require('./dataHandler');
+var logger = require('./logger');
+var args = process.argv;
+var port;
+
+if (args.indexOf('--debug') > 1) {
+	logger.open();
+} else {
+	port = 12306;
+}
 
 var options = {
 	publicUrl: 'asset',
@@ -21,5 +30,5 @@ var options = {
 };
 
 module.exports = function () {
-	exiler.server(options);
+	exiler.server(options, port);
 };

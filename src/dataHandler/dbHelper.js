@@ -1,5 +1,6 @@
 var path = require('path');
 var sqlite = require('sqlite3').verbose();
+var logger=require('../logger');
 
 var DBHelper = {};
 
@@ -37,7 +38,7 @@ DBHelper.retrieve = function (obj, callback) {
 		sql += ' LIMIT ' + obj[PROP_LIMIT];
 	}
 
-	console.log('retrieve sql', sql);
+	logger.log('retrieve sql', sql);
 
 	db.serialize(function () {
 		db.all(sql, function (err, row) {
@@ -60,7 +61,7 @@ function insertDB(obj, db) {
 
 	sql += columns + ') VALUES' + values + ')';
 
-	console.log('insert sql', sql);
+	logger.log('insert sql', sql);
 
 	db.run(sql);
 }
