@@ -4,9 +4,9 @@ module.exports = function (grunt) {
 		requirejs: {
 			compile: {
 				options: {
-					baseUrl: 'src/asset_files/js',
-					mainConfigFile: 'src/asset_files/js/main.js',
-					dir: 'src/asset_files/dist/js',
+					baseUrl: 'src/frontend/asset/js',
+					mainConfigFile: 'src/frontend/asset/js/main.js',
+					dir: 'built/dest',
 					exclude: ['jsx'],
 					optimize: 'uglify2',
 					skipDirOptimize: true,
@@ -25,10 +25,41 @@ module.exports = function (grunt) {
 					]
 				}
 			}
-		}
+		},
+		copy: {
+			main: {
+				files: [
+					{
+						cwd: 'src/backend',
+						src: '**/*',
+						dest: 'built/backend',
+						expand: true
+					}, {
+						cwd: 'src/frontend/template',
+						src: '**/*',
+						dest: 'built/frontend/template',
+						expand: true
+					}, {
+						src: 'src/app.js',
+						dest: 'built/app.js'
+					},
+					{
+						src: 'built/dest/main.js',
+						dest: 'built/frontend/asset/js/main.js'
+					},
+					{
+						src: 'src/frontend/asset/js/bower_components/requirejs/require.js',
+						dest: 'built/frontend/asset/js/require.js'
+					}
+				]
+			}
+		},
+		clean: ['built']
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
-	grunt.registerTask('default', ['requirejs']);
+	grunt.registerTask('default', ['clean', 'requirejs', 'copy']);
 };
