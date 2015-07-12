@@ -10,10 +10,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "src/asset_files/bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
     "jquery": "1.9.1",
@@ -21,6 +18,9 @@
     "react": "~0.13.3",
     "require-less": "~0.1.5",
     "requirejs-react-jsx": "~0.14.2",
-    "requirejs": "~2.1.18"
+    "requirejs": "~2.1.18",
+    "poly": "~0.6.1",
+    "when": "~3.7.3",
+    "moment": "~2.10.3"
   }
 }

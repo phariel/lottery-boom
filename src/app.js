@@ -25,6 +25,9 @@ var options = {
 					ex_data: dataHandler.parse
 				}
 			}
+		},
+		dist:{
+			ex_template: 'index-dist.ejs'
 		}
 	}
 };
