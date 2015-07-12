@@ -58,7 +58,7 @@ requirejs.config({
 		}
 	]
 });
-requirejs(['lottery', 'hashService'], function (Lottery, HashService) {
+requirejs(['lottery', 'hashService', 'less!styles/main'], function (Lottery, HashService) {
 	var lottery = new Lottery();
 	var hashService = new HashService({
 		show: {
